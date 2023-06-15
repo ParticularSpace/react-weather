@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve",
-    "build": "webpack --mode production",
-    "serve": "serve -s dist"
+    "start": "node server.js",
+    "postinstall": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
