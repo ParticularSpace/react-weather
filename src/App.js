@@ -9,7 +9,8 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState(null); // Add a state variable for the forecast data
 
-  const apiKey = process.env.OPEN_WEATHER_MAP_API_KEY;
+  const apiKey = process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY;
+
   console.log(apiKey);
 
   useEffect(() => {
