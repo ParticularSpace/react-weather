@@ -1,0 +1,27 @@
+/* Forecast.css */
+
+.forecast-item {
+  width: 150px; /* Set a fixed width for the forecast cards */
+  margin: 10px; /* Add some margin around the cards */
+  padding: 10px; /* Add some padding inside the cards */
+  background-color: #f0f0f0; /* Set a background color */
+  border-radius: 10px; /* Round the corners */
+  text-align: center; /* Center the text */
+}
+
+.forecast-item h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.forecast-item p {
+  margin: 0;
+  font-size: 1em;
+}
+
+/* Add a new rule to make the forecast cards display in a row */
+.forecast-container {
+  display: flex;
+  justify-content: space-around; /* Distribute the cards evenly across the row */
+  flex-wrap: wrap; /* Allow the cards to wrap to a new line if there isn't enough space */
+}
