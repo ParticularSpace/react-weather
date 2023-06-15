@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     if (city) {
-      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`)
+      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=25d33f8c57018604cd95eaaaa98fb241`)
         .then((response) => response.json())
         .then((data) => setWeatherData(data))
         .catch((error) => console.error('Error:', error));

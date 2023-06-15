@@ -6,9 +6,11 @@ function CurrentWeather({ weatherData }) {
     return <div>Loading...</div>;
   }
 
+  // Destructure the weatherData object
   const { main, weather, name } = weatherData;
   const iconUrl = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
 
+  // Round the temperature to the nearest whole number
   return (
     <div className="current-weather">
       <h2>{name}</h2>
