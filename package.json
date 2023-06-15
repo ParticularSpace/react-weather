@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve",
-    "build": "webpack",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build",
+    "serve": "serve -s build"
   },
   "keywords": [],
   "author": "",
