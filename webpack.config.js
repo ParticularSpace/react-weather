@@ -35,7 +35,9 @@ module.exports = {
       directory: path.join(__dirname, 'dist'),
     },
     compress: true,
-    port: process.env.PORT || 9000, // use process.env.PORT
+    port: process.env.PORT || 9000,
+    disableHostCheck: true, // Add this line
   },
+  
   
 };
