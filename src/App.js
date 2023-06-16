@@ -9,7 +9,7 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState(null); // Add a state variable for the forecast data
 
-  const apiKey = process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY;
+  const apiKey = '25d33f8c57018604cd95eaaaa98fb241';
 
   console.log(apiKey);
 
@@ -30,10 +30,6 @@ function App() {
 
   if (weatherData) {
     console.log(weatherData);
-  }
-
-  if (forecastData) {
-    console.log(forecastData); // Log the forecast data for debugging
   }
 
   return (
