@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "webpack --mode production"
+    "heroku-postbuild": "REACT_APP_OPEN_WEATHER_MAP_API_KEY=$REACT_APP_OPEN_WEATHER_MAP_API_KEY npm run build"
   },
   "keywords": [],
   "author": "",
