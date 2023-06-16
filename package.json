@@ -2,11 +2,11 @@
   "name": "react-weather",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-  "start": "node server.js",
-  "build": "react-scripts build",
-  "heroku-postbuild": "REACT_APP_OPEN_WEATHER_MAP_API_KEY=$REACT_APP_OPEN_WEATHER_MAP_API_KEY npm run build"
+    "start": "node server.js",
+    "build": "react-scripts build",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
