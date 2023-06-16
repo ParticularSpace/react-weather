@@ -28,6 +28,6 @@
     "webpack-dev-server": "^4.15.1"
   },
   "devDependencies": {
-  },
+  }, 
   "homepage": "https://ParticularSpace.github.io/react-weather"
 }
