@@ -8,8 +8,7 @@ function Forecast({ forecastData }) {
   });
 
   return (
-    <div>
-      <div className="forecast-container">
+    <div className="forecast-container">
       {dailyData.map((item, index) => {
         const iconUrl = `http://openweathermap.org/img/w/${item.weather[0].icon}.png`;
 
@@ -23,12 +22,12 @@ function Forecast({ forecastData }) {
           <div key={index} className="forecast-item">
             <h3>{dayOfWeek}</h3> {/* Display the day of the week */}
             <img src={iconUrl} alt="Weather icon" /> {/* Display the icon */}
-            <p>Temperature: {item.main.temp}°F</p>
-            <p>Description: {item.weather[0].description}</p>
+            <div>
+              <p>Temperature: {item.main.temp}°F</p>
+            </div>
           </div>
         );
       })}
-      </div>
     </div>
   );
 }
