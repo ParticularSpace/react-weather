@@ -2,10 +2,12 @@ import React from 'react';
 import './Forecast.css';
 
 function Forecast({ forecastData }) {
-  // Filter the forecast data to include only the first entry for each day
-  const dailyData = forecastData.list.filter((item, index, array) => {
-    return index === 0 || item.dt_txt.split(' ')[0] !== array[index - 1].dt_txt.split(' ')[0];
-  });
+  
+  const dailyData = forecastData && forecastData.list 
+    ? forecastData.list.filter((item, index, array) => {
+        return index === 0 || item.dt_txt.split(' ')[0] !== array[index - 1].dt_txt.split(' ')[0];
+      })
+    : [];
 
   return (
     <div className="forecast-container">
