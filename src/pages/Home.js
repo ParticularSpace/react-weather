@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import CurrentWeather from '../components/CurrentWeather';
 import Forecast from '../components/Forecast';
+import '../styles/index.css';
 
 function Home() {
   const [weatherData, setWeatherData] = useState(null);
@@ -42,6 +43,7 @@ function Home() {
     }
   };
 
+
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,8 +60,14 @@ function Home() {
             </div>
           )}
 
-          {weatherData && <CurrentWeather weatherData={weatherData} />}
-          {forecastData && <Forecast forecastData={forecastData} />}
+          <div className="flex flex-wrap justify-center mt-8">
+            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+              {weatherData && <CurrentWeather weatherData={weatherData} />}
+            </div>
+            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+              {forecastData && <Forecast forecastData={forecastData} />}
+            </div>
+          </div>
         </div>
       </div>
     </div>
