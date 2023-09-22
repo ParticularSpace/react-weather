@@ -1,5 +1,5 @@
 import React from 'react';
-import './Forecast.css';
+
 
 function Forecast({ forecastData }) {
   
@@ -25,7 +25,7 @@ function Forecast({ forecastData }) {
             <h3>{dayOfWeek}</h3> {/* Display the day of the week */}
             <img src={iconUrl} alt="Weather icon" /> {/* Display the icon */}
             <div>
-              <p>Temperature: {item.main.temp}°F</p>
+              <p>Temperature: {Math.round(item.main.temp)}°F</p>
             </div>
           </div>
         );
