@@ -14,15 +14,15 @@ function Forecast({ forecastData }) {
         const date = new Date(item.dt_txt);
 
         return (
-          <div key={index} className="flex items-center justify-between bg-white rounded-lg p-4 shadow-md mb-4">
-            <div className="flex items-center">
+          <div key={index} className="flex flex-col md:flex-row items-center justify-between bg-white rounded-lg p-4 shadow-md mb-4">
+            <div className="flex items-center mb-4 md:mb-0">
               <img src={iconUrl} alt={item.weather[0].description} className="w-12 h-12" />
               <div className="ml-4">
                 <p className="text-lg font-bold">{date.toLocaleDateString()}</p>
                 <p className="text-sm font-bold text-gray-500">{item.weather[0].description}</p>
               </div>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center mb-4 md:mb-0">
               <p className="text-lg font-bold">{Math.round(item.main.temp)}°F</p>
               <div className="ml-4">
                 <p className="text-sm font-bold text-gray-500">Feels Like</p>

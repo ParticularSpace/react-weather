@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import CurrentWeather from '../components/CurrentWeather';
 import Forecast from '../components/Forecast';
+import MapComponent from '../components/GoogleMaps';
 import '../styles/index.css';
 
 function Home() {
@@ -61,11 +62,16 @@ function Home() {
           )}
 
           <div className="flex flex-wrap justify-center mt-8">
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+            <div className="w-full lg:w-1/2 px-4 mb-8">
               {weatherData && <CurrentWeather weatherData={weatherData} />}
             </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+            <div className="w-full lg:w-1/2 px-4 mb-8">
               {forecastData && <Forecast forecastData={forecastData} />}
+              {weatherData && weatherData.coord && (
+                <div className="mt-4 rounded-lg shadow-md p-4">
+                  <MapComponent latitude={weatherData.coord.lat} longitude={weatherData.coord.lon} />
+                </div>
+              )}
             </div>
           </div>
         </div>
