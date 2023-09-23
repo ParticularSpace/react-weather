@@ -11,7 +11,8 @@ function CurrentWeather({ weatherData }) {
 
   // Round the temperature to the nearest whole number
   return (
-    <div className="current-weather bg-white rounded-lg p-4 shadow-lg max-h-[400px] overflow-y-auto">
+    
+     <div className="bg-white rounded-lg p-4 shadow-lg mb-4">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-2xl font-bold">{name}</h2>
         <img src={iconUrl} alt={weather[0].description} className="w-16 h-16" />

@@ -61,19 +61,16 @@ function Home() {
             </div>
           )}
 
-          <div className="flex flex-wrap justify-center mt-8">
-            <div className="w-full lg:w-1/2 px-4 mb-8">
-              {weatherData && <CurrentWeather weatherData={weatherData} />}
-            </div>
-            <div className="w-full lg:w-1/2 px-4 mb-8">
-              {forecastData && <Forecast forecastData={forecastData} />}
-              {weatherData && weatherData.coord && (
-                <div className="mt-4 rounded-lg shadow-md p-4">
-                  <MapComponent latitude={weatherData.coord.lat} longitude={weatherData.coord.lon} />
-                </div>
-              )}
-            </div>
-          </div>
+          <div className="col-span-2 md:col-span-1">
+  {weatherData && <CurrentWeather weatherData={weatherData} />}
+  {forecastData && <Forecast forecastData={forecastData} />}
+</div>
+<div className="col-span-2">
+  {weatherData && weatherData.coord && (
+    <MapComponent latitude={weatherData.coord.lat} longitude={weatherData.coord.lon} />
+  )}
+</div>
+
         </div>
       </div>
     </div>
