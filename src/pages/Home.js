@@ -3,7 +3,7 @@ import SearchBar from '../components/SearchBar';
 import CurrentWeather from '../components/CurrentWeather';
 import Forecast from '../components/Forecast';
 import MapComponent from '../components/GoogleMaps';
-import '../styles/index.css';
+
 
 function Home() {
   const [weatherData, setWeatherData] = useState(null);
@@ -47,32 +47,33 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mt-12">
-          <h1 className="text-4xl font-extrabold text-gray-900">Weather App</h1>
+      
+      <main className="p-4">
+        <div className="flex justify-center mb-4">
           <SearchBar onCityChange={handleCityChange} />
-
-          {error && (
-            <div className="bg-red-500 text-white p-4 rounded mt-4">
-              <p>{error}</p>
-              <button className="bg-white text-red-500 p-2 mt-2" onClick={() => setError(null)}>
-                Close
-              </button>
-            </div>
-          )}
-
-          <div className="col-span-2 md:col-span-1">
-  {weatherData && <CurrentWeather weatherData={weatherData} />}
-  {forecastData && <Forecast forecastData={forecastData} />}
-</div>
-<div className="col-span-2">
-  {weatherData && weatherData.coord && (
-    <MapComponent latitude={weatherData.coord.lat} longitude={weatherData.coord.lon} />
-  )}
-</div>
-
         </div>
-      </div>
+        {error && (
+          <div className="bg-red-500 text-white p-4 rounded mt-4 mb-4">
+            <p>{error}</p>
+            <button className="bg-white text-red-500 p-2 mt-2" onClick={() => setError(null)}>
+              Close
+            </button>
+          </div>
+        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            {weatherData && <CurrentWeather weatherData={weatherData} />}
+          </div>
+          <div>
+            {forecastData && <Forecast forecastData={forecastData} />}
+          </div>
+        </div>
+        {weatherData && weatherData.coord && (
+          <div className="mt-4">
+            <MapComponent latitude={weatherData.coord.lat} longitude={weatherData.coord.lon} />
+          </div>
+        )}
+      </main>
     </div>
   );
 }

@@ -137,21 +137,21 @@ function SearchBar({ onCityChange, city }) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="flex items-center justify-center mt-8">
+    <div className="relative">
+      <form onSubmit={handleSubmit} className="flex items-center">
         <input
           type="text"
           placeholder="Enter city name"
-          className="border border-gray-300 rounded-l-lg py-2 px-4 block w-full appearance-none leading-normal"
+          className="border-2 border-blue-400 rounded-l px-4 py-2 w-64 focus:border-blue-500"
           value={newCity}
           onChange={handleInputChange}
         />
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r-lg">
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-r">
           Search
         </button>
       </form>
       {showSuggestions && (
-        <ul className="suggestions-list mt-2 bg-white border border-gray-300 rounded-lg shadow-lg">
+        <ul className="absolute w-64 mt-2 bg-white border border-gray-300 rounded shadow-lg z-10">
           {suggestions.map((suggestion, index) => (
             <li
               key={index}
